@@ -1,4 +1,4 @@
 output "instance_ips" {
-  value = aws_instance.*.*.public_ip
+  value = aws_instance.machine1.*.public_ip
 }
 
