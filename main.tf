@@ -9,7 +9,7 @@ output "instance_ips" {
 
 resource "aws_instance" "machine1" {
     ami           = "ami-04b9e92b5572fa0d1"
-    instance_type = "t2.micro"
+    instance_type = var.instance_type
     availability_zone = "us-east-1b"
     tags = {
       "type" = var.myTag
@@ -18,7 +18,7 @@ resource "aws_instance" "machine1" {
 
 resource "aws_instance" "machine2" {
     ami           = "ami-04b9e92b5572fa0d1"
-    instance_type = "t2.micro"
+    instance_type = var.instance_type
     availability_zone = "us-east-1b"
     tags = {
       "type" = var.myTag
