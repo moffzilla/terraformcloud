@@ -25,7 +25,7 @@ resource "aws_instance" "machine2" {
     }
 }
 
-output "instance_ips" {
+output "instance2_ips" {
   value = aws_instance.machine2.*.public_ip
 }
 
