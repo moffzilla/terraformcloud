@@ -3,31 +3,31 @@ provider "aws" {
     region="us-east-1"
 }
 
-output "instance_ips" {
-  value = aws_instance.machine1.*.public_ip
-}
+#resource "aws_instance" "machine1" {
+#    ami           = "ami-04b9e92b5572fa0d1"
+#    instance_type = var.instance_type
+#    availability_zone = "us-east-1b"
+#    tags = {
+#      "type" = var.myTag
+#    }
+#}
 
-resource "aws_instance" "machine1" {
-    ami           = "ami-04b9e92b5572fa0d1"
-    instance_type = var.instance_type
-    availability_zone = "us-east-1b"
-    tags = {
-      "type" = var.myTag
-    }
-}
+#output "instance_ips" {
+#  value = aws_instance.machine1.*.public_ip
+#}
 
-resource "aws_instance" "machine2" {
-    ami           = "ami-04b9e92b5572fa0d1"
-    instance_type = var.instance_type
-    availability_zone = "us-east-1b"
-    tags = {
-      "type" = var.myTag
-    }
-}
+#resource "aws_instance" "machine2" {
+#    ami           = "ami-04b9e92b5572fa0d1"
+#    instance_type = var.instance_type
+#    availability_zone = "us-east-1b"
+#    tags = {
+#      "type" = var.myTag
+#    }
+#}
 
-output "instance2_ips" {
-  value = aws_instance.machine2.*.public_ip
-}
+#output "instance2_ips" {
+#  value = aws_instance.machine2.*.public_ip
+#}
 
 #resource "aws_network_interface_sg_attachment" "sg_attachment1" {
 #  security_group_id    = "sg-8e01a2fb"
