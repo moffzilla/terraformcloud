@@ -30,3 +30,5 @@ runcmd:
   - sudo chown terraform:hashicorp /home/terraform/go
   - export GOPATH=/home/terraform/go
   - go get github.com/hashicorp/learn-go-webapp-demo
+  - cd go/src/github.com/hashicorp/learn-go-webapp-demo
+  - go run webapp.go 

@@ -3,24 +3,24 @@ provider "aws" {
     region="us-east-1"
 }
 
-data "template_file" "user_data" {
-  template = file("scripts/add-ssh-web-app.yaml")
-}
+#data "template_file" "user_data" {
+#  template = file("scripts/add-ssh-web-app.yaml")
+#}
 
-resource "aws_instance" "machine1" {
-    ami           = "ami-04b9e92b5572fa0d1"
-    instance_type = var.instance_type
-    availability_zone = "us-east-1b"
-    associate_public_ip_address = true
-    user_data                   = data.template_file.user_data.rendered
-    tags = {
-      "type" = var.myTag
-    }
-}
+#resource "aws_instance" "machine1" {
+#    ami           = "ami-04b9e92b5572fa0d1"
+#    instance_type = var.instance_type
+#    availability_zone = "us-east-1b"
+#    associate_public_ip_address = true
+#    user_data                   = data.template_file.user_data.rendered
+#    tags = {
+#      "type" = var.myTag
+#    }
+#}
 
-output "instance_ips" {
-  value = aws_instance.machine1.*.public_ip
-}
+#output "instance_ips" {
+#  value = aws_instance.machine1.*.public_ip
+#}
 
 #resource "aws_instance" "machine2" {
 #    ami           = "ami-04b9e92b5572fa0d1"
