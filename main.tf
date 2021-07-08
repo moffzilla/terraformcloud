@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 data "template_file" "user_data" {
-  template = file("../scripts/add-ssh-web-app.yaml")
+  template = file("scripts/add-ssh-web-app.yaml")
 }
 
 resource "aws_instance" "machine1" {
